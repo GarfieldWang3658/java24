@@ -1,42 +1,35 @@
-INSERT INTO `SELECT` (`id`, `name`, `chinese`, `english`, `math`) VALUES (1, 'wangyang', 89, 78, 90);
-INSERT INTO `SELECT` (`id`, `name`, `chinese`, `english`, `math`) VALUES (2, 'wangmiduo', 79, 68, 80);
-INSERT INTO `SELECT` (`id`, `name`, `chinese`, `english`, `math`) VALUES (3, 'shenjiayan', 69, 88, 50);
-INSERT INTO `SELECT` (`id`, `name`, `chinese`, `english`, `math`) VALUES (4, 'shenjiayan', 83, 72, 91);
-INSERT INTO `SELECT` (`id`, `name`, `chinese`, `english`, `math`) VALUES (5, 'chengshenheng', 81, 76, 70);
-INSERT INTO `SELECT` (`id`, `name`, `chinese`, `english`, `math`) VALUES (6, 'tanaka', 33, 22, 44);
-INSERT INTO `SELECT` (`id`, `name`, `chinese`, `english`, `math`) VALUES (7, 'aoki', 84, 65, 70);
-INSERT INTO `SELECT` (`name`, `english`) VALUES ('wangyang', 78);
-INSERT INTO `SELECT` (`name`, `english`) VALUES ('wangmiduo', 68);
-INSERT INTO `SELECT` (`name`, `english`) VALUES ('shenjiayan', 88);
-INSERT INTO `SELECT` (`name`, `english`) VALUES ('shenjiayan', 72);
-INSERT INTO `SELECT` (`name`, `english`) VALUES ('chengshenheng', 76);
-INSERT INTO `SELECT` (`name`, `english`) VALUES ('tanaka', 22);
-INSERT INTO `SELECT` (`name`, `english`) VALUES ('aoki', 65);
-INSERT INTO `SELECT` (`english`) VALUES (78);
-INSERT INTO `SELECT` (`english`) VALUES (68);
-INSERT INTO `SELECT` (`english`) VALUES (88);
-INSERT INTO `SELECT` (`english`) VALUES (72);
-INSERT INTO `SELECT` (`english`) VALUES (76);
-INSERT INTO `SELECT` (`english`) VALUES (22);
-INSERT INTO `SELECT` (`english`) VALUES (65);
-INSERT INTO `SELECT` (`name`, `(chinese+english+math)`) VALUES ('wangyang', 257);
-INSERT INTO `SELECT` (`name`, `(chinese+english+math)`) VALUES ('wangmiduo', 227);
-INSERT INTO `SELECT` (`name`, `(chinese+english+math)`) VALUES ('shenjiayan', 207);
-INSERT INTO `SELECT` (`name`, `(chinese+english+math)`) VALUES ('shenjiayan', 246);
-INSERT INTO `SELECT` (`name`, `(chinese+english+math)`) VALUES ('chengshenheng', 227);
-INSERT INTO `SELECT` (`name`, `(chinese+english+math)`) VALUES ('tanaka', 99);
-INSERT INTO `SELECT` (`name`, `(chinese+english+math)`) VALUES ('aoki', 219);
-INSERT INTO `SELECT` (`name`, `(chinese+english+math+10)`) VALUES ('wangyang', 267);
-INSERT INTO `SELECT` (`name`, `(chinese+english+math+10)`) VALUES ('wangmiduo', 237);
-INSERT INTO `SELECT` (`name`, `(chinese+english+math+10)`) VALUES ('shenjiayan', 217);
-INSERT INTO `SELECT` (`name`, `(chinese+english+math+10)`) VALUES ('shenjiayan', 256);
-INSERT INTO `SELECT` (`name`, `(chinese+english+math+10)`) VALUES ('chengshenheng', 237);
-INSERT INTO `SELECT` (`name`, `(chinese+english+math+10)`) VALUES ('tanaka', 109);
-INSERT INTO `SELECT` (`name`, `(chinese+english+math+10)`) VALUES ('aoki', 229);
-INSERT INTO `SELECT` (`name`, `总分`) VALUES ('wangyang', 267);
-INSERT INTO `SELECT` (`name`, `总分`) VALUES ('wangmiduo', 237);
-INSERT INTO `SELECT` (`name`, `总分`) VALUES ('shenjiayan', 217);
-INSERT INTO `SELECT` (`name`, `总分`) VALUES ('shenjiayan', 256);
-INSERT INTO `SELECT` (`name`, `总分`) VALUES ('chengshenheng', 237);
-INSERT INTO `SELECT` (`name`, `总分`) VALUES ('tanaka', 109);
-INSERT INTO `SELECT` (`name`, `总分`) VALUES ('aoki', 229);
+#グラフstudentの全ての学生情報を走査します
+SELECT*FROM student;
+
+#氏名と英語成績を走査します
+SELECT name,english FROM student;
+
+#重複データ〜を選別します
+SELECT DISTINCT english FROM student;
+
+#各生徒の総合点数を統計します。
+SELECT name,(chinese+english+math)FROM student;
+
+#全ての生徒の点数+10
+SELECT name,(chinese+english+math+10)FROM student;
+
+#別名で生徒の成績を表ます。
+SELECT name AS '名字',(chinese+english+math+10) AS '总分' FROM student;
+
+#氏名で点数を調べる
+SELECT*FROM student
+WHERE `name` = 'wangyang'
+
+#英語点数90以上の生徒を調べる
+SELECT*FROM student
+WHERE english>80;
+
+#総合点数200点以上の生徒を調べる
+SELECT*FROM student
+WHERE (chinese+english+math)>200
+
+
+
+
+
+
