@@ -1,0 +1,33 @@
+
+
+CREATE TABLE t24
+(id INT PRIMARY KEY AUTO_INCREMENT,
+email VARCHAR(32)NOT NULL DEFAULT(''),
+`name` VARCHAR(32)NOT NULL DEFAULT(''));
+DESC t24
+INSERT INTO t24 VALUES(NULL,'tom@qq.com','Tom');
+INSERT INTO t24 VALUES(NULL,'123@qq.com','wang');
+INSERT INTO t24 VALUES(NULL,'456@qq.com','shen');
+
+INSERT INTO t24 (email,`name`) VALUES('789@qq.com','duo');
+
+SELECT*FROM t24
+
+
+CREATE TABLE t25
+(id INT PRIMARY KEY AUTO_INCREMENT,
+email VARCHAR(32)NOT NULL DEFAULT(''),
+`name` VARCHAR(32)NOT NULL DEFAULT(''));
+
+ALTER TABLE t25 auto_increment = 100;
+
+INSERT INTO t25 VALUES(NULL,'tom@qq.com','Tom');
+
+INSERT INTO t25 (email,`name`) VALUES('789@qq.com','duo');
+INSERT INTO t25 VALUES(666,'456@qq.com','shen');
+INSERT INTO t25 VALUES(NULL,'456@qq.com','shen');
+SELECT*FROM t25
+
+
+
+

@@ -25,6 +25,6 @@ FOREIGN KEY (【商品番号】goods_id) REFERENCES 商品goods(【商品番号�
 
 DESC 商品goods
 DESC 顧客customer
-DESC 購入記録purchase
+　　
 
 
